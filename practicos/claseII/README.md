@@ -1,6 +1,6 @@
 ### BootCamp Java 2022
 
-- [] Entero capicua
+- [X] Entero capicua
 - [] Factorial
 - [] Decimal a Binario
 - [] Binario a Decimal
