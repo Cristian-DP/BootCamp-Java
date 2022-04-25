@@ -47,12 +47,12 @@ public class Main {
 	 * @param number
 	 * @return int
 	 */
-	public int factorialWithRecursion(int number) {
+	public int getFactorialWithRecursion(int number) {
 		
 		if (number < 0) return -1;
 		else if (number == 0) return 1;
 		
-		return number * factorialWithRecursion(number-1);
+		return number * getFactorialWithRecursion(number-1);
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class Main {
 	 * @param number
 	 * @return int
 	 */
-	public int factorialWithoutRecursion(int number) {
+	public int getFactorialWithoutRecursion(int number) {
 		
 		if (number < 0)
 			return -1;
@@ -90,8 +90,8 @@ public class Main {
 		/* Prueba factorial */
 		number = 5;
 		System.out.println("--------- Factorial -------------- ");
-		System.out.println(  number + " -> " + m.factorialWithRecursion(number));
-		System.out.println(  number + " -> " + m.factorialWithoutRecursion(number));
+		System.out.println(  number + " -> " + m.getFactorialWithRecursion(number));
+		System.out.println(  number + " -> " + m.getFactorialWithoutRecursion(number));
 		
 		
 	}
