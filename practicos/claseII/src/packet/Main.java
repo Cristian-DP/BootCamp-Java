@@ -1,3 +1,9 @@
+/**
+ * @author cristian pereyra
+ * @github https://github.com/Cristian-DP/BootCamp-Java.git 
+ *  
+ */
+
 package packet;
 
 public class Main {
@@ -14,7 +20,7 @@ public class Main {
 	private boolean isCapicua (int number) {
 		
 		/* Un digito*/
-		if (number < 10)
+		if (number < 10 && number >= 0)
 			return true;
 		
 		String s;
@@ -33,15 +39,60 @@ public class Main {
 		return true;
 	}
 	
+	/**
+	 * Al recibir un numero entero, se multiplica por los n-1 valores
+	 * anteriores.
+	 * Se resuelve de forma recursiva
+	 * 
+	 * @param number
+	 * @return int
+	 */
+	public int factorialWithRecursion(int number) {
+		
+		if (number < 0) return -1;
+		else if (number == 0) return 1;
+		
+		return number * factorialWithRecursion(number-1);
+	}
+
+	/**
+	 * Al recibir un numero entero, se multiplica por los n-1 valores
+	 * anteriores.
+	 * Se resuelve de forma repetitiva
+	 * 
+	 * @param number
+	 * @return int
+	 */
+	public int factorialWithoutRecursion(int number) {
+		
+		if (number < 0)
+			return -1;
+		
+		int factorial = 1;
+		
+		for (int n = number; n >= 0; n--)
+			if(n == 0)	factorial *= 1;
+			else		factorial *= n;
+		
+		return factorial;
+	}
+	
 	public static void main(String[] args) {
 		
 		Main m = new Main();
+		int number;
 		
 		/* Prueba capicua */
-		System.out.println( m.isCapicua(44) ? "true" : "false" );
-		System.out.println( m.isCapicua(1001) ? "true" : "false" );
-		System.out.println( m.isCapicua(1100) ? "true" : "false" );
-		System.out.println( m.isCapicua(25632) ? "true" : "false" );
+		number = 22;
+		System.out.println("--------- Capicua -------------- ");
+		System.out.println( number+ " -> " + (m.isCapicua(number) ? "true" : "false") );
+		
+		/* Prueba factorial */
+		number = 5;
+		System.out.println("--------- Factorial -------------- ");
+		System.out.println(  number + " -> " + m.factorialWithRecursion(number));
+		System.out.println(  number + " -> " + m.factorialWithoutRecursion(number));
+		
 		
 	}
 

@@ -1,7 +1,7 @@
 ### BootCamp Java 2022
 
 - [X] Entero capicua
-- [] Factorial
+- [X] Factorial
 - [] Decimal a Binario
 - [] Binario a Decimal
 
@@ -12,15 +12,17 @@ Recordemos que **capicúa** se refiere a cualquier numero que se lee igual de iz
 
 Para su resolución se procedió como sigue
 
-	1. Se recibe una variable int
-	2. La variable int es convertida a un array de string
-	3. Se lee el array tanto de izquiera a derecha como de derecha a izquierda
-		3.1. Mientras que las lecturas sean iguales, sigo.
-		3.2. Si la lecturas son distintas, retorno **false**.
-	4. Cuando los indices coinciden y se cumplieron todas las igualdades, retorno **true**. 
+1. Se recibe una variable int
+2. La variable int es convertida a un array de string
+3. Se lee el array tanto de izquiera a derecha como de derecha a izquierda
+	3.1. Mientras que las lecturas sean iguales, sigo.
+	3.2. Si la lecturas son distintas, retorno **false**.
+4. Cuando los indices coinciden y se cumplieron todas las igualdades, retorno **true**. 
 
 ## Factorial
-Construir un Metodo que recibe un entero y devuelve el factorial del mismo.
+*Construir un Metodo que recibe un entero y devuelve el factorial del mismo.*
+
+El factorial de un entero positivo "n" se define en principio como el producti de todos los números enteris positivos desde 1 hasta "n".
 
 ## Decimal a Binario
 Construir un Metodo que recibe un entero en formato binario y devuelve un double en formato binarios.
