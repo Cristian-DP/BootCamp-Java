@@ -2,7 +2,7 @@
 
 - [X] Entero capicua
 - [X] Factorial
-- [] Decimal a Binario
+- [X] Decimal a Binario
 - [] Binario a Decimal
 
 ## Entero Capicua
@@ -25,7 +25,9 @@ Para su resolución se procedió como sigue
 El factorial de un entero positivo "n" se define en principio como el producti de todos los números enteris positivos desde 1 hasta "n".
 
 ## Decimal a Binario
-Construir un Metodo que recibe un entero en formato decimal y devuelve un double en formato binarios.
+*Construir un Metodo que recibe un entero en formato decimal y devuelve un double en formato binarios.*
 
+Para su resolucion, se usó el metodo de devidir por 2 el numero entero e ir guardando el resto. Este resto es el valor que formará parte del binario final.
+**No contempla numeros negativos**
 ## Binario a Decimal
 Construir un Metodo que recibe un double en formato binario y devuelve un int en formato decimal.
