@@ -25,7 +25,7 @@ Para su resolución se procedió como sigue
 El factorial de un entero positivo "n" se define en principio como el producti de todos los números enteris positivos desde 1 hasta "n".
 
 ## Decimal a Binario
-Construir un Metodo que recibe un entero en formato binario y devuelve un double en formato binarios.
+Construir un Metodo que recibe un entero en formato decimal y devuelve un double en formato binarios.
 
 ## Binario a Decimal
 Construir un Metodo que recibe un double en formato binario y devuelve un int en formato decimal.

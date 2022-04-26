@@ -23,17 +23,17 @@ public class Main {
 		if (number < 10 && number >= 0)
 			return true;
 		
-		String s;
-		int i, j;
+		String numberString;
+		int idxLeft, idxRight;
 		
 		/* Inicializo variables */
-		s = Integer.toString(number);
-		j = s.length() - 1;
-		i = 0;
+		numberString = Integer.toString(number);
+		idxRight = numberString.length() - 1;
+		idxLeft = 0;
 		
 		/* Mas de un digito */
-		for (; i != j && j > i; i++, j--)
-			if (s.charAt(i) != s.charAt(j))
+		for (; idxRight >= idxLeft; idxLeft++, idxRight--)
+			if (numberString.charAt(idxLeft) != numberString.charAt(idxRight))
 				return false;
 		
 		return true;
@@ -47,7 +47,7 @@ public class Main {
 	 * @param number
 	 * @return int
 	 */
-	public int getFactorialWithRecursion(int number) {
+	public long getFactorialWithRecursion(int number) {
 		
 		if (number < 0) return -1;
 		else if (number == 0) return 1;
@@ -63,18 +63,54 @@ public class Main {
 	 * @param number
 	 * @return int
 	 */
-	public int getFactorialWithoutRecursion(int number) {
+	public long getFactorialWithoutRecursion(int number) {
 		
 		if (number < 0)
 			return -1;
 		
-		int factorial = 1;
+		long factorial = 1;
 		
-		for (int n = number; n >= 0; n--)
-			if(n == 0)	factorial *= 1;
-			else		factorial *= n;
+		for (long n = (long)number; n > 0; n--)
+			factorial *= n;
 		
 		return factorial;
+	}
+	
+	public double intToBinaryV1 (int number) {
+		if (number < 0)
+			return -1.0;
+		
+		int n_bits, cociente;
+		String[] stringBinary;
+		String concat;
+		
+		/* obtengo la cantidad de bits del binario*/
+		for (n_bits = 0; Math.pow((double)n_bits, 2) <= number; n_bits++) {}
+		
+		stringBinary = new String[n_bits];
+		
+		/* armo el binario en formato string cadena*/
+		cociente = number;
+		for (int idx = n_bits - 1; idx >= 0; idx--) {
+			if (idx == 0)
+				stringBinary[0] = Integer.toString(cociente);
+			else {
+				stringBinary[idx] = Integer.toString(cociente%2);
+				cociente = cociente/2;
+			}
+		}
+		
+		/* concateno en un solo string el binario*/
+		concat = "";
+		for (int i = 0; i < stringBinary.length; i++) {
+			concat += stringBinary[i];
+		}
+		
+		return Double.parseDouble(concat);
+	}
+	
+	public double intToBinaryV2 (int number) {
+		return Double.parseDouble( Integer.toBinaryString(number) ); 
 	}
 	
 	public static void main(String[] args) {
@@ -83,16 +119,21 @@ public class Main {
 		int number;
 		
 		/* Prueba capicua */
-		number = 22;
+		number = 100001;
 		System.out.println("--------- Capicua -------------- ");
 		System.out.println( number+ " -> " + (m.isCapicua(number) ? "true" : "false") );
 		
 		/* Prueba factorial */
 		number = 5;
 		System.out.println("--------- Factorial -------------- ");
-		System.out.println(  number + " -> " + m.getFactorialWithRecursion(number));
-		System.out.println(  number + " -> " + m.getFactorialWithoutRecursion(number));
+		System.out.println( number + " -> " + m.getFactorialWithRecursion(number) + " [R]");
+		System.out.println( number + " -> " + m.getFactorialWithoutRecursion(number));
 		
+		/* Prueba entero a Binario */
+		number = -1;
+		System.out.println("--------- Entero a Binario ------- ");
+		System.out.println( number+ " -> " + m.intToBinaryV1(number));
+		System.out.println( number+ " -> " + m.intToBinaryV2(number));
 		
 	}
 
