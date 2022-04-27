@@ -3,7 +3,7 @@
 - [X] Entero capicua
 - [X] Factorial
 - [X] Decimal a Binario
-- [] Binario a Decimal
+- [X] Binario a Decimal
 
 ## Entero Capicua
 *Construir un metodo que reciba un entero como parametro y devuelva boolean indicando si es capicua o no dicho numero.*
@@ -30,4 +30,7 @@ El factorial de un entero positivo "n" se define en principio como el producti d
 Para su resolucion, se usó el metodo de devidir por 2 el numero entero e ir guardando el resto. Este resto es el valor que formará parte del binario final.
 **No contempla numeros negativos**
 ## Binario a Decimal
-Construir un Metodo que recibe un double en formato binario y devuelve un int en formato decimal.
+*Construir un Metodo que recibe un double en formato binario y devuelve un int en formato decimal.*
+
+Para su resolucion, se lee de derecha a izquierda el double como String y se opera matematicamente. 
+ decimal += pow(2,pot)*bitRead.
