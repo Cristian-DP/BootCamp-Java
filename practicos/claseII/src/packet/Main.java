@@ -6,6 +6,8 @@
 
 package packet;
 
+import java.util.Objects;
+
 public class Main {
 	
 	/**
@@ -70,7 +72,7 @@ public class Main {
 		
 		long factorial = 1;
 		
-		for (long n = (long)number; n > 0; n--)
+		for (int n = number; n > 0; n--)
 			factorial *= n;
 		
 		return factorial;
@@ -90,7 +92,7 @@ public class Main {
 		String concat;
 		
 		/* obtengo la cantidad de bits del binario*/
-		for (n_bits = 0; Math.pow((double)n_bits, 2) <= number; n_bits++) {}
+		for (n_bits = 0; Math.pow(2, (double)n_bits) <= number; n_bits++) {}
 		
 		stringBinary = new String[n_bits];
 		
@@ -136,7 +138,7 @@ public class Main {
 		/* convierto a decimal */
 		decimal = 0;
 		for (int i = 0; idx >= 0; idx--, i++) { 
-			bit =  (int)Double.parseDouble("" + binary.charAt(idx)) ;
+			bit =  Integer.parseInt("" + binary.charAt(idx));
 			decimal += (int) Math.pow( 2, i ) * bit;
 		}
 	
@@ -153,6 +155,7 @@ public class Main {
 		number = 100001;
 		System.out.println("--------- Capicua -------------- ");
 		System.out.println( number+ " -> " + (m.isCapicua(number) ? "true" : "false") );
+		System.out.println( (number+1) + " -> " + (m.isCapicua(number+1) ? "true" : "false") );
 		
 		/* Prueba factorial */
 		number = 5;
@@ -161,13 +164,13 @@ public class Main {
 		System.out.println( number + " -> " + m.getFactorialWithoutRecursion(number));
 		
 		/* Prueba entero a Binario */
-		number = 7;
+		number = 32;
 		System.out.println("--------- Entero a Binario ------- ");
 		System.out.println( number+ " -> " + m.intToBinaryV1(number));
 		System.out.println( number+ " -> " + m.intToBinaryV2(number));
 		
 		/* Prueba binario a entero */
-		numberDouble = 10000.0;
+		numberDouble = 10001.0;
 		System.out.println("--------- Binario a Entero ------- ");
 		System.out.println( numberDouble + " -> " + m.binaryToInt(numberDouble));
 		
