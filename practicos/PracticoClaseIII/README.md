@@ -1,18 +1,18 @@
 ### BootCamp Java 2022
 
-[] Clase Pila (Collection sin Queue/Deque)
-[] Clase Fila (Collection sin Queue/Deque)
-[] Clase Pila 
-[] Clase Fila 
-[] Clase Arbol Binario
-   [] inOrden 
-   [] preOrden
-   [] postOrden
-[] Recursion
-   [] Factorial
-   [] Producto
-   [] String invertido
-[] Consecutivos menores 
+-  [] Clase Pila (Collection sin Queue/Deque)
+-  [] Clase Fila (Collection sin Queue/Deque)
+-  [] Clase Pila 
+-  [] Clase Fila 
+-  [] Clase Arbol Binario
+   -  [] inOrden 
+   -  [] preOrden
+   -  [] postOrden
+-  [] Recursion
+   -  [] Factorial
+   -  [] Producto
+   -  [] String invertido
+-  [] Consecutivos menores 
 
 ## Clase Pila (Collection sin Queue/Deque)
 Implementar la clase Pila (Utilizando una Collection que no implemente la interfaz Queue / Deque)
