@@ -4,10 +4,10 @@
 -  [x] Clase Fila (Collection sin Queue/Deque)
 -  [x] Clase Pila 
 -  [x] Clase Fila 
--  [] Clase Arbol Binario
-   -  [] inOrden 
-   -  [] preOrden
-   -  [] postOrden
+-  [x] Clase Arbol Binario
+   -  [x] inOrden 
+   -  [x] preOrden
+   -  [x] postOrden
 -  [x] Recursion
    -  [x] Factorial
    -  [x] Producto
