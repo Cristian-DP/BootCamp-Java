@@ -1,23 +1,34 @@
 ### BootCamp Java 2022
 
--  [] Clase Pila (Collection sin Queue/Deque)
--  [] Clase Fila (Collection sin Queue/Deque)
--  [] Clase Pila 
--  [] Clase Fila 
+-  [x] Clase Pila (Collection sin Queue/Deque)
+-  [x] Clase Fila (Collection sin Queue/Deque)
+-  [x] Clase Pila 
+-  [x] Clase Fila 
 -  [] Clase Arbol Binario
    -  [] inOrden 
    -  [] preOrden
    -  [] postOrden
 -  [] Recursion
-   -  [] Factorial
+   -  [x] Factorial
    -  [] Producto
-   -  [] String invertido
--  [] Consecutivos menores 
+   -  [x] String invertido
+-  [x] Consecutivos menores 
 
-## Clase Pila (Collection sin Queue/Deque)
+## Clase Nodo
+Si bien esta clase no es requisito formal de la consigna, se decidió agregarla como un factor comun a todas las clase que luego se irán creando.
+
+## Clase Pila (Collection sin Queue/Deque) - LIFO
 Implementar la clase Pila (Utilizando una Collection que no implemente la interfaz Queue / Deque)
 
-## Clase Fila (Collection sin Queue/Deque)
+Una pila es una structura que nos permite apilar elementos y recopilarlos en el orden inverso. Esto se conoce como estructuras LIFO.
+Una pila suele tener tres operaciones básicas
+- push, añade elementos a la lista
+- pop, retira elementos de la lista.
+- empty, comprueba si la lista está vacia.
+
+Esta pila es declarada como <T>, de forma generica.
+
+## Clase Fila (Collection sin Queue/Deque) - FIFO
 Implementar la clase Fila (Utilizando una Collection que no implemente la interfaz Queue / Deque)
 
 ## Clase Pila y Fila
@@ -44,3 +55,8 @@ NO OBLIGATORIO (Es para pensar): Metodo que devuelva un boolean indicando si est
        esSumatoriaDeConsecutivos(9) = TRUE pq 9 = 4 + 3 + 2
 
     Se puede implementar recursivo y iterativo.  Deseable contar con metodo que devuelva la lista de numeros que representan la suma.  Comparar performance de ambas implementaciones y sacar conclusiones.
+
+
+## Referencias
+
+https://docs.oracle.com/javase/tutorial/java/generics/genTypes.html
