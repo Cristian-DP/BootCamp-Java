@@ -8,9 +8,9 @@
    -  [] inOrden 
    -  [] preOrden
    -  [] postOrden
--  [] Recursion
+-  [x] Recursion
    -  [x] Factorial
-   -  [] Producto
+   -  [x] Producto
    -  [x] String invertido
 -  [x] Consecutivos menores 
 
