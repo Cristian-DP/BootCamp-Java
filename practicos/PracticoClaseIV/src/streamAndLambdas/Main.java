@@ -3,9 +3,7 @@ package streamAndLambdas;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -24,27 +22,26 @@ e) Obtenga un mapa donde la clave sea la nota y
  */
 public class Main {
 
-	private static final Object i = null;
-
-	@SuppressWarnings("unlikely-arg-type")
 	public static void main(String[] args) {
 		List<Alumnos> l = new ArrayList<Alumnos>();
-		Random rand = new Random();
+		final List<Alumnos> l2 = new ArrayList<Alumnos>();
 		
-
 		/* Genero Alumnos randomicamente */
 		int i = 0;
-		for (int id = 0; id < 15; id++) {
-			l.add(
-					new Alumnos(id, rand.nextInt(15), 
-									""+rand.nextInt(400000) , 
-										rand.nextInt(15) + "nom"+ i, 
+		l = (ArrayList<Alumnos>)
+			Stream.iterate(1, cant -> cant+1)
+					.limit(15)
+					.map(id -> {
+						Random rand = new Random();
+						Alumnos a = new Alumnos(id, rand.nextInt(15), 
+											""+rand.nextInt(400000) , 
+											rand.nextInt(15) + "nom"+ i, 
 											rand.nextInt(15) + "ap"+i, 
-												"curso1", 
-													rand.nextInt(10))
-				);
-			i++;
-		}
+											"BootCamp", 
+											rand.nextInt(10));
+						return a;
+					})
+					.collect(Collectors.toList());
 		
 		/*Se muestran todos los alumnos de la lista*/
 		System.out.println("*********** Listado de alumnos ***********");
@@ -85,16 +82,16 @@ public class Main {
 		HashMap<Double, List<Alumnos>> mapa = new HashMap<Double, List<Alumnos>>();
 		
 		/* seteo el mapa */
+		l.stream().forEach(x -> l2.add(x));
 		l.stream()
 				/* pregunto si la nota ya es clave en el mapa*/
 				.filter(x -> !mapa.containsKey(x.getNota()))
 				/* si no es clave, sigo con forEach */
-				.forEach(x -> {
-					/* vuelvo a mirar a todos lo elementos de la lista
+				.forEach(x -> {/* vuelvo a mirar a todos lo elementos de la lista
 					 * para buscar aquellos que tiene la misma nota que
 					 * el elemento -x- que paso el filtro */
 					ArrayList<Alumnos> al =
-						(ArrayList<Alumnos>) l.stream()
+						(ArrayList<Alumnos>) l2.stream()
 								/* pregunto si el elemento -y- tiene la misma
 								 * nota que el elemento -x- */
 								.filter(y -> y.getNota() == x .getNota())
